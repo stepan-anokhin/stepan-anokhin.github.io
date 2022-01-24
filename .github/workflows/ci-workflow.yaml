@@ -36,8 +36,9 @@ jobs:
       - name: Change Parent URL
         working-directory: spb-histmap
         run: sed -ri 's/src="\/main.bundle.js"/src="\/spb-histmap\/main.bundle.js"/' index.html
-      - name: Check State
+      - name: Commit Updated SPB Histmap
         working-directory: spb-histmap
         run: |
-          cat index.html
-          ls -l .
+          git add .
+          git commit -m "Update spb-histmap"
+          git push origin master
