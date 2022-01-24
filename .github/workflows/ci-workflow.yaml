@@ -39,6 +39,8 @@ jobs:
       - name: Commit Updated SPB Histmap
         working-directory: spb-histmap
         run: |
+          git config --global user.email "StepanAnokhinsBot@users.noreply.github.com"
+          git config --global user.name "Stepan Anokhin's Bot"
           git add .
           git commit -m "Update spb-histmap"
           git push origin master
