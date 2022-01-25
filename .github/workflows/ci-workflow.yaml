@@ -26,16 +26,15 @@ jobs:
         run: npm install
       - name: Build SPB Histmap
         working-directory: spb-histmap/repo
-        run: npm run build
+        run: |
+          export PUBLIC_PATH="/spb-histmap"
+          npm run build
       - name: Copy Build Artifacts
         working-directory: spb-histmap
         run: cp repo/build/* .
       - name: Remove SPB Histmpa Repo
         working-directory: spb-histmap
         run: rm -rf repo
-      - name: Change Parent URL
-        working-directory: spb-histmap
-        run: sed -ri 's/src="\/main.bundle.js"/src="\/spb-histmap\/main.bundle.js"/' index.html
       - name: Commit Updated SPB Histmap
         working-directory: spb-histmap
         run: |
