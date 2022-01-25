@@ -27,7 +27,7 @@ jobs:
       - name: Build SPB Histmap
         working-directory: spb-histmap/repo
         run: |
-          export PUBLIC_PATH="/spb-histmap"
+          export PUBLIC_PATH="/spb-histmap/"
           npm run build
       - name: Copy Build Artifacts
         working-directory: spb-histmap
